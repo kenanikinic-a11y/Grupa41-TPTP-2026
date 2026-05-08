@@ -1,15 +1,207 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="bs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2c3e50">
     <title>StudentMind - Zdravlje i Wellbeing</title>
+
+    <style>
+        /* Promjenljive boje i teme; automatski tamni mod preko preferencija preglednika */
+        :root {
+            --primarna: #2c3e50;
+            --akcentna: #27ae60;
+            --pozadina: #f4f7f6;
+            --tekst: #333;
+            --kartica: #fff;
+            --gradijent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --pozadina: #121212;
+                --tekst: #e0e0e0;
+                --kartica: #1e1e1e;
+                --primarna: #81c784;
+                --akcentna: #67d9a1;
+                --gradijent: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--pozadina);
+            color: var(--tekst);
+            margin: 0;
+            transition: background 0.3s ease, color 0.3s ease;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--gradijent);
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.7em;
+            font-weight: bold;
+        }
+
+        .main-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+
+        .main-nav a:hover {
+            color: #ffd700;
+        }
+
+        .page-grid {
+            display: grid;
+            grid-template-columns: 230px 1fr 280px;
+            gap: 20px;
+            padding: 20px 5%;
+            min-height: calc(100vh - 140px);
+        }
+
+        .side-nav,
+        .content-area,
+        aside {
+            background: var(--kartica);
+            border-radius: 14px;
+            box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+            padding: 20px;
+        }
+
+        .side-nav h3,
+        aside h3,
+        .section-block h2 {
+            color: var(--primarna);
+            margin-top: 0;
+        }
+
+        .side-nav button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: var(--akcentna);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .side-nav button:hover,
+        .side-nav button.active {
+            background: #1abc9c;
+            transform: translateY(-1px);
+        }
+
+        .content-area h1,
+        .section-block h2 {
+            text-align: center;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+            background: var(--kartica);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.15);
+        }
+
+        .card img,
+        .card picture img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 18px;
+        }
+
+        .card-content h2 {
+            margin-top: 0;
+            color: var(--primarna);
+        }
+
+        .card-content a {
+            color: var(--akcentna);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .card-content a:hover {
+            text-decoration: underline;
+        }
+
+        aside iframe {
+            border-radius: 12px;
+        }
+
+        .section-block {
+            padding: 40px 5%;
+            background: var(--pozadina);
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px 5%;
+            background: var(--primarna);
+            color: white;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 1100px) {
+            .page-grid { grid-template-columns: 1fr; }
+            .card-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 760px) {
+            header { flex-direction: column; align-items: flex-start; }
+            .main-nav ul { justify-content: flex-start; }
+            .card-grid { grid-template-columns: 1fr; }
+            .page-grid { min-height: auto; }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div>StudentMind</div>
-        <nav>
+        <div class="logo">StudentMind</div>
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Pocetna</a></li>
                 <li><a href="sadrzaj.html">Savjeti</a></li>
@@ -19,9 +211,10 @@
         </nav>
     </header>
 
-    <section id="home">
-        <div>
-            <nav>
+    <!-- GLAVNI SADRZAJ: pocetna sekcija s karticama i filtriranjem -->
+    <section id="home" class="section-block">
+        <div class="page-grid">
+            <nav class="side-nav">
                 <h3>Kategorije</h3>
                 <ul>
                     <li><button data-category="sve">Sve teme</button></li>
@@ -32,59 +225,58 @@
                 </ul>
             </nav>
 
-            <article>
+            <article class="content-area">
                 <h1>Mentalno zdravlje studenata</h1>
-               
                 <div id="interaktivna-statistika">
                     Trenutno online savjetnika: <span id="brojac">12</span>
                 </div>
-                <div>
-                    <article>
+                <div class="card-grid" id="kartice-kontejner">
+                    <article class="card" data-category="stres">
                         <picture>
                             <source srcset="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400" type="image/webp">
                             <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400" alt="Student uci">
                         </picture>
-                        <div>
+                        <div class="card-content">
                             <h2>Ispitna anksioznost</h2>
                             <p>Naucite kako prevladati strah od ispita i poboljsati fokus.</p>
                             <a href="sadrzaj.html">Procitaj vise</a>
                         </div>
                     </article>
-                    <article data-category="ishrana">
+                    <article class="card" data-category="ishrana">
                         <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400" alt="Zdrava hrana">
-                        <div>
+                        <div class="card-content">
                             <h2>Hrana za mozak</h2>
                             <p>Koje namirnice dokazano poboljsavaju pamcenje i koncentraciju.</p>
                             <a href="sadrzaj.html">Procitaj vise</a>
                         </div>
                     </article>
-                    <article data-category="san">
+                    <article class="card" data-category="san">
                         <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=400" alt="Osoba spava">
-                        <div>
+                        <div class="card-content">
                             <h2>Higijena sna</h2>
                             <p>Zasto je san kljucan za procesiranje novih informacija.</p>
                             <a href="sadrzaj.html">Procitaj vise</a>
                         </div>
                     </article>
-                    <article data-category="vjezbe">
+                    <article class="card" data-category="vjezbe">
                         <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400" alt="Joga vjezbe">
-                        <div>
+                        <div class="card-content">
                             <h2>Joga za fokus</h2>
                             <p>Jednostavne vjezbe istezanja koje mozete raditi u pauzi.</p>
                             <a href="sadrzaj.html">Procitaj vise</a>
                         </div>
                     </article>
-                    <article data-category="stres">
+                    <article class="card" data-category="stres">
                         <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400" alt="Meditacija">
-                        <div>
+                        <div class="card-content">
                             <h2>Mindfulness</h2>
                             <p>5 minuta meditacije dnevno moze promijeniti vasu reakciju na stres.</p>
                             <a href="sadrzaj.html">Procitaj vise</a>
                         </div>
                     </article>
-                    <article data-category="vjezbe">
+                    <article class="card" data-category="vjezbe">
                         <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400" alt="Suma">
-                        <div>
+                        <div class="card-content">
                             <h2>Priroda i zdravlje</h2>
                             <p>Kratka setnja parkom smanjuje nivo kortizola u krvi.</p>
                             <a href="sadrzaj.html">Procitaj vise</a>
@@ -105,3 +297,5 @@
     </footer>
 </body>
 </html>
+
+
