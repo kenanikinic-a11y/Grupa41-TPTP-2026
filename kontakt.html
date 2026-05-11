@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c3e50">
+    <title>StudentMind - Kontakt</title>
+</head>
+<body>
+    <header>
+        <div>StudentMind</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Pocetna</a></li>
+                <li><a href="sadrzaj.html">Savjeti</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="https://github.com/kenanikinic-a11y/Grupa41-TPTP-2026" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div>
+            <h2>Kontakt</h2>
+            <form id="kontaktForma" novalidate>
+                <div>
+                    <label for="ime">Ime:</label>
+                    <input type="text" id="ime">
+                    <span id="imeError"></span>
+                </div>
+                <div>
+                    <label for="prezime">Prezime:</label>
+                    <input type="text" id="prezime">
+                    <span id="prezimeError"></span>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email">
+                    <span id="emailError"></span>
+                </div>
+                <div>
+                    <label for="telefon">Telefon (samo brojevi i -):</label>
+                    <input type="text" id="telefon">
+                    <span id="telefonError"></span>
+                </div>
+                <div>
+                    <label for="tema">Tema:</label>
+                    <select id="tema">
+                        <option value="">Odaberi...</option>
+                        <option value="savjet">Tražim savjet</option>
+                        <option value="saradnja">Saradnja</option>
+                    </select>
+                    <span id="temaError"></span>
+                </div>
+                <div>
+                    <label for="poruka">Poruka:</label>
+                    <textarea id="poruka"></textarea>
+                    <span id="porukaError"></span>
+                </div>
+                <button type="submit">Pošalji poruku</button>
+                <button type="button" id="resetDugme">Resetuj</button>
+            </form>
+            <div id="uspjehPoruka"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 StudentMind | Grupa 41 | Autori: Kenan Ikinic, Kerim Fazlic, Kenan Lacic</p>
+    </footer>
+</body>
+</html>
