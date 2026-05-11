@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const savedCategory = localStorage.getItem('preferredCategory') || 'sve';
     filtriraj(savedCategory);
@@ -11,7 +12,79 @@ document.addEventListener('DOMContentLoaded', () => {
             brojac.innerText = trenutno;
         }, 3000);
     }
+
+    const forma = document.getElementById('kontaktForma');
+    if (forma) {
+        forma.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            document.querySelectorAll('.error-msg').forEach(el => el.innerText = '');
+            document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+            document.getElementById('uspjehPoruka').style.display = 'none';
+
+            const ime = document.getElementById('ime');
+            if (ime && ime.value.trim().length < 2) {
+                oznaciGresku('ime', 'Ime je obavezno.');
+                isValid = false;
+            }
+
+            const prezime = document.getElementById('prezime');
+            if (prezime && prezime.value.trim().length < 2) {
+                oznaciGresku('prezime', 'Prezime je obavezno.');
+                isValid = false;
+            }
+
+            const email = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email && !emailRegex.test(email.value)) {
+                oznaciGresku('email', 'Unesite validan email.');
+                isValid = false;
+            }
+
+            const telefon = document.getElementById('telefon');
+            const telRegex = /^[0-9\s-]+$/;
+            if (telefon && !telRegex.test(telefon.value)) {
+                oznaciGresku('telefon', 'Unesite samo brojeve.');
+                isValid = false;
+            }
+
+            const tema = document.getElementById('tema');
+            if (tema && tema.value === '') {
+                oznaciGresku('tema', 'Odaberite temu.');
+                isValid = false;
+            }
+
+            const poruka = document.getElementById('poruka');
+            if (poruka && poruka.value.trim().length < 10) {
+                oznaciGresku('poruka', 'Poruka mora imati najmanje 10 karaktera.');
+                isValid = false;
+            }
+
+            if (isValid) {
+                const imeVal = ime.value;
+                const uspjeh = document.getElementById('uspjehPoruka');
+                uspjeh.innerText = `Hvala, ${imeVal}! Poruka je poslana.`;
+                uspjeh.style.display = 'block';
+                forma.reset();
+            }
+        });
+    }
+
+    document.getElementById('resetDugme')?.addEventListener('click', () => {
+        forma?.reset();
+        document.querySelectorAll('.error-msg').forEach(el => el.innerText = '');
+        document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+        document.getElementById('uspjehPoruka').style.display = 'none';
+    });
 });
+
+function oznaciGresku(id, poruka) {
+    const element = document.getElementById(id);
+    if (element) element.classList.add('input-error');
+    const errorElement = document.getElementById(`${id}Error`);
+    if (errorElement) errorElement.innerText = poruka;
+}
 
 function filtriraj(kat) {
     const kartice = document.querySelectorAll('.card');
