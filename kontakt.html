@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2c3e50">
     <title>StudentMind - Kontakt</title>
+    <link rel="stylesheet" href="css/tptpstil.css">
 </head>
 <body>
     <header>
-        <div>StudentMind</div>
-        <nav>
+        <div class="logo">StudentMind</div>
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Pocetna</a></li>
                 <li><a href="sadrzaj.html">Savjeti</a></li>
@@ -19,48 +20,48 @@
         </nav>
     </header>
 
-    <section>
-        <div>
+    <section class="section-block">
+        <div class="contact-block">
             <h2>Kontakt</h2>
             <form id="kontaktForma" novalidate>
-                <div>
+                <div class="form-group">
                     <label for="ime">Ime:</label>
                     <input type="text" id="ime">
-                    <span id="imeError"></span>
+                    <span class="error-msg" id="imeError"></span>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="prezime">Prezime:</label>
                     <input type="text" id="prezime">
-                    <span id="prezimeError"></span>
+                    <span class="error-msg" id="prezimeError"></span>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email">
-                    <span id="emailError"></span>
+                    <span class="error-msg" id="emailError"></span>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="telefon">Telefon (samo brojevi i -):</label>
                     <input type="text" id="telefon">
-                    <span id="telefonError"></span>
+                    <span class="error-msg" id="telefonError"></span>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="tema">Tema:</label>
                     <select id="tema">
                         <option value="">Odaberi...</option>
                         <option value="savjet">Tražim savjet</option>
                         <option value="saradnja">Saradnja</option>
                     </select>
-                    <span id="temaError"></span>
+                    <span class="error-msg" id="temaError"></span>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="poruka">Poruka:</label>
                     <textarea id="poruka"></textarea>
-                    <span id="porukaError"></span>
+                    <span class="error-msg" id="porukaError"></span>
                 </div>
                 <button type="submit">Pošalji poruku</button>
                 <button type="button" id="resetDugme">Resetuj</button>
             </form>
-            <div id="uspjehPoruka"></div>
+            <div id="uspjehPoruka" class="success-hidden"></div>
         </div>
     </section>
 
