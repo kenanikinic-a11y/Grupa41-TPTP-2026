@@ -1,0 +1,284 @@
+/* Promjenljive boje i teme; automatski tamni mod preko preferencija preglednika */
+:root {
+    --primarna: #2c3e50;
+    --akcentna: #27ae60;
+    --pozadina: #f4f7f6;
+    --tekst: #333;
+    --kartica: #fff;
+    --gradijent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --pozadina: #121212;
+        --tekst: #e0e0e0;
+        --kartica: #1e1e1e;
+        --primarna: #81c784;
+        --akcentna: #67d9a1;
+        --gradijent: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    }
+}
+
+/* ===== Zajednicki stilovi ===== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--pozadina);
+    color: var(--tekst);
+    margin: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: var(--gradijent);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: #ffd700;
+}
+
+.section-block {
+    padding: 40px 5%;
+    background: var(--pozadina);
+}
+
+.section-block h2 {
+    color: var(--primarna);
+    margin-top: 0;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 22px 5%;
+    background: var(--primarna);
+    color: white;
+    margin-top: 20px;
+}
+
+/* ===== index.html ===== */
+
+.page-grid {
+    display: grid;
+    grid-template-columns: 230px 1fr 280px;
+    gap: 20px;
+    padding: 20px 5%;
+    min-height: calc(100vh - 140px);
+}
+
+.side-nav,
+.content-area,
+aside {
+    background: var(--kartica);
+    border-radius: 14px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+    padding: 20px;
+}
+
+.side-nav h3,
+aside h3 {
+    color: var(--primarna);
+    margin-top: 0;
+}
+
+.side-nav button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: var(--akcentna);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.side-nav button:hover,
+.side-nav button.active {
+    background: #1abc9c;
+    transform: translateY(-1px);
+}
+
+.content-area h1 {
+    text-align: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    background: var(--kartica);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.15);
+}
+
+.card img,
+.card picture img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 18px;
+}
+
+.card-content h2 {
+    margin-top: 0;
+    color: var(--primarna);
+}
+
+.card-content a {
+    color: var(--akcentna);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-content a:hover {
+    text-decoration: underline;
+}
+
+aside iframe {
+    border-radius: 12px;
+}
+
+/* ===== kontakt.html ===== */
+
+.contact-block {
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--kartica);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--tekst);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 14px;
+    box-sizing: border-box;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background: var(--pozadina);
+    color: var(--tekst);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--akcentna);
+    outline: none;
+    box-shadow: 0 0 12px rgba(39,174,96,0.15);
+}
+
+textarea { resize: vertical; min-height: 120px; }
+
+button[type="submit"], button[type="button"] {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button[type="submit"] {
+    background: var(--akcentna);
+    color: white;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+    transform: translateY(-1px);
+}
+
+button[type="button"] {
+    background: #95a5a6;
+    color: white;
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.95rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.input-error { border-color: #e74c3c; }
+
+.success-hidden {
+    display: none;
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 22px;
+    border: 1px solid #c3e6cb;
+}
+
+/* ===== Responzivnost ===== */
+
+@media (max-width: 1100px) {
+    .page-grid { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 760px) {
+    header { flex-direction: column; align-items: flex-start; }
+    .main-nav ul { justify-content: flex-start; }
+    .card-grid { grid-template-columns: 1fr; }
+    .page-grid { min-height: auto; }
+}
