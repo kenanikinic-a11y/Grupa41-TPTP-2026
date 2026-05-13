@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c3e50">
+    <title>StudentMind - Savjeti i Sadržaj</title>
+</head>
+<body>
+    <header id="vrh">
+        <div>StudentMind</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Pocetna</a></li>
+                <li><a href="sadrzaj.html">Savjeti</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="https://github.com/kenanikinic-a11y/Grupa41-TPTP-2026" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bookmark navigacija -->
+    <nav>
+        <ul>
+            <li><a href="#wellness-mapa">Wellness mapa</a></li>
+            <li><a href="#savjeti">Savjeti</a></li>
+            <li><a href="#galerija">Galerija</a></li>
+            <li><a href="#raspored">Raspored</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- IMAGE MAP: slika s klikabilnim područjima -->
+        <section id="wellness-mapa">
+            <h2>Wellness mapa — interaktivna navigacija</h2>
+            <p>Kliknite na određeno područje slike da brzo skočite na odgovarajući dio stranice.</p>
+            <div>
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&h=400"
+                     alt="Interaktivna wellness mapa — tri područja: savjeti (lijevo), galerija (sredina gore), raspored (desno gore)"
+                     usemap="#wellnessMap"
+                     width="600" height="400">
+                <map name="wellnessMap">
+                    <area shape="rect" coords="0,0,180,400"
+                          href="#savjeti"
+                          alt="Savjeti za mentalno zdravlje"
+                          title="Savjeti">
+                    <area shape="rect" coords="180,0,420,180"
+                          href="#galerija"
+                          alt="Galerija wellbeing slika"
+                          title="Galerija">
+                    <area shape="circle" coords="510,100,80"
+                          href="#raspored"
+                          alt="Sedmični raspored aktivnosti"
+                          title="Raspored">
+                </map>
+                <div>
+                    <span>Savjeti</span>
+                    <span>Galerija</span>
+                    <span>Raspored</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SAVJETI: detaljan clanak s ugnijezdenom listom -->
+        <section id="savjeti">
+            <h2>Savjeti za mentalno zdravlje studenata</h2>
+            <article>
+                <h3>Cjeloviti vodič za student wellbeing</h3>
+                <p>Mentalno zdravlje studenata direktno utječe na akademski uspjeh, socijalne odnose i
+                cjelokupni kvalitet života. Ovaj vodič obuhvata sve ključne aspekte studentskog wellbeinga —
+                od upravljanja stresom do pravilne ishrane i fizičke aktivnosti.</p>
+
+                <h4>Sveobuhvatni plan wellbeinga</h4>
+                <ul>
+                    <li>Mentalno zdravlje i stres management
+                        <ul>
+                            <li>Tehnike upravljanja stresom
+                                <ul>
+                                    <li>Pomodoro tehnika — 25 min rad, 5 min odmor</li>
+                                    <li>Eisenhower matrica za prioritizaciju zadataka</li>
+                                    <li>Mindmapping za vizualizaciju gradiva</li>
+                                </ul>
+                            </li>
+                            <li>Relaksacijske tehnike
+                                <ul>
+                                    <li>Dijafragmalno disanje (4-7-8 metoda)</li>
+                                    <li>Progresivna mišićna relaksacija</li>
+                                    <li>Mindfulness meditacija — minimum 10 minuta dnevno</li>
+                                </ul>
+                            </li>
+                            <li>Socijalna podrška
+                                <ul>
+                                    <li>Razgovor s prijateljem ili mentorom</li>
+                                    <li>Studentski savjetodavni centri</li>
+                                    <li>Online zajednice za mentalno zdravlje</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Ishrana za mozak i tijelo
+                        <ul>
+                            <li>Jutarnji obroci
+                                <ul>
+                                    <li>Proteini — jaja, grčki jogurt, orasi</li>
+                                    <li>Složeni ugljikohidrati — zobena kaša, integralni hljeb</li>
+                                    <li>Antioksidansi — borovnice, jagode</li>
+                                </ul>
+                            </li>
+                            <li>Hidracija
+                                <ul>
+                                    <li>Minimum 8 čaša vode dnevno</li>
+                                    <li>Zeleni i biljni čajevi</li>
+                                    <li>Izbjegavati prekomjerni kofein (max 2 kafe dnevno)</li>
+                                </ul>
+                            </li>
+                            <li>Supernamirnice za studente
+                                <ul>
+                                    <li>Losos i skuša — omega-3 masne kiseline za mozak</li>
+                                    <li>Avokado — zdravi masni acidi i folna kiselina</li>
+                                    <li>Tamna čokolada 70%+ — flavonoidi za koncentraciju</li>
+                                    <li>Orasi i bademi — magnezij za regulaciju stresa</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Fizička aktivnost i kretanje
+                        <ul>
+                            <li>Aerobne aktivnosti
+                                <ul>
+                                    <li>Trčanje — 30 min, 3 puta tjedno</li>
+                                    <li>Plivanje — odlično za opuštanje i cijelo tijelo</li>
+                                    <li>Biciklizam — aktivni transport do fakulteta</li>
+                                </ul>
+                            </li>
+                            <li>Vježbe snage i fleksibilnosti
+                                <ul>
+                                    <li>Joga — kombinira tjelesno i mentalno zdravlje</li>
+                                    <li>Pilates — fokus na core i pravilno disanje</li>
+                                    <li>Desk stretching — istezanje svakih 30 minuta</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Kvalitet sna
+                        <ul>
+                            <li>Higijenska pravila spavanja
+                                <ul>
+                                    <li>Fiksno vrijeme odlaska na spavanje svaki dan</li>
+                                    <li>Bez ekrana sat vremena prije sna</li>
+                                    <li>Temperatura spavaće sobe 18-20 °C</li>
+                                </ul>
+                            </li>
+                            <li>Jutarnja rutina nakon buđenja
+                                <ul>
+                                    <li>Izloženost prirodnom svjetlu odmah po buđenju</li>
+                                    <li>Lagano istezanje ili kratka meditacija</li>
+                                    <li>Bez provjere telefona prvih 30 minuta</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- GALERIJA: 8 slika, picture element na prvoj -->
+        <section id="galerija">
+            <h2>Galerija — Wellbeing u slikama</h2>
+            <div>
+                <figure>
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&fm=webp"
+                                type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400"
+                             alt="Student sjedi prekriženih nogu i meditira u mirnom, sunčanom prostoru">
+                    </picture>
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400"
+                         alt="Raznovrsna zdrava hrana — svježe voće, povrće i proteini na drvenom stolu">
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=400"
+                         alt="Udobna spavaća soba s mekim osvjetljenjem — idealni uvjeti za kvalitetan san">
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400"
+                         alt="Osoba praktikuje jogu na otvorenom — poza ratnika s pogledom na horizont">
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400"
+                         alt="Sunčana šuma sa stazom za šetnju — terapeutski učinak prirode na mentalno zdravlje">
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400"
+                         alt="Grupa studenata smije se i provodi ugodno vrijeme zajedno na otvorenom kampusu">
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400"
+                         alt="Student fokusirano čita knjigu uz prozor s prirodnim dnevnim osvjetljenjem">
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400"
+                         alt="Žena trči po parku u jutarnjim satima — redovna fizička aktivnost za mentalno zdravlje">
+                </figure>
+            </div>
+        </section>
+
+        <!-- TABELA: 5 kolona, 7 redova podataka -->
+        <section id="raspored">
+            <h2>Preporučeni sedmični raspored wellbeing aktivnosti</h2>
+            <div>
+                <table>
+                    <caption>Sedmični wellness plan za studente — prilagodite prema vlastitom rasporedu</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Dan</th>
+                            <th scope="col">Jutarnja rutina</th>
+                            <th scope="col">Studij i fokus</th>
+                            <th scope="col">Fizička aktivnost</th>
+                            <th scope="col">Večernja rutina</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Ponedjeljak</th>
+                            <td>Meditacija 10 min, voćni doručak</td>
+                            <td>3h fokusiranog učenja (Pomodoro)</td>
+                            <td>Brza šetnja parkom 30 min</td>
+                            <td>Čitanje, bez ekrana 1h pred spavanje</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Utorak</th>
+                            <td>Istezanje 15 min, zobena kaša</td>
+                            <td>4h studija + pregledavanje bilješki</td>
+                            <td>Joga ili pilates 45 min</td>
+                            <td>Muzika ili blag podcast</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Srijeda</th>
+                            <td>Kratka jutarnja vježba 20 min</td>
+                            <td>3h studija, grupni rad u biblioteci</td>
+                            <td>Plivanje ili vožnja bicikla</td>
+                            <td>Socijalizacija s prijateljima</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Četvrtak</th>
+                            <td>Meditacija + zeleni čaj, voće</td>
+                            <td>4h studija, fokus na problematično</td>
+                            <td>Trčanje 20-30 min, lagani tempo</td>
+                            <td>Topla kupka, rano lijeganje</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Petak</th>
+                            <td>Kratka meditacija 5 min</td>
+                            <td>2h ponavljanje, priprema za narednu</td>
+                            <td>Grupni sport ili ples</td>
+                            <td>Opuštanje, film ili serija</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Subota</th>
+                            <td>Slobodna jutarnja rutina, duži doručak</td>
+                            <td>Maksimalno 2h — vikend je za odmor</td>
+                            <td>Izlet u prirodu ili planinarenje</td>
+                            <td>Društvene aktivnosti po izboru</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nedjelja</th>
+                            <td>Spori start, meditacija 15 min</td>
+                            <td>Pregled plana za narednu sedmicu</td>
+                            <td>Lagana šetnja ili rekreativna joga</td>
+                            <td>Rano spavanje, priprema za novu sedmicu</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 StudentMind | Grupa 41 | Autori: Kenan Ikinic, Kerim Fazlic, Kenan Lacic</p>
+        <a href="#vrh">Skoči na vrh</a>
+    </footer>
+</body>
+</html>
