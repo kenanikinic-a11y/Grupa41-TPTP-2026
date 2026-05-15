@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2c3e50">
     <title>StudentMind - Savjeti i Sadržaj</title>
+    <link rel="stylesheet" href="css/tptpstil.css">
 </head>
 <body>
     <header id="vrh">
-        <div>StudentMind</div>
-        <nav>
+        <div class="logo">StudentMind</div>
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Pocetna</a></li>
                 <li><a href="sadrzaj.html">Savjeti</a></li>
@@ -20,7 +21,7 @@
     </header>
 
     <!-- Bookmark navigacija -->
-    <nav>
+    <nav class="bookmark-nav">
         <ul>
             <li><a href="#wellness-mapa">Wellness mapa</a></li>
             <li><a href="#savjeti">Savjeti</a></li>
@@ -31,14 +32,15 @@
 
     <main>
         <!-- IMAGE MAP: slika s klikabilnim područjima -->
-        <section id="wellness-mapa">
+        <section id="wellness-mapa" class="section-block fade-in-section">
             <h2>Wellness mapa — interaktivna navigacija</h2>
-            <p>Kliknite na određeno područje slike da brzo skočite na odgovarajući dio stranice.</p>
-            <div>
+            <p class="tekst-centar">Kliknite na određeno područje slike da brzo skočite na odgovarajući dio stranice.</p>
+            <div class="imagemap-container">
                 <img src="images/joga.jpeg"
                      alt="Interaktivna wellness mapa — tri područja: savjeti (lijevo), galerija (sredina gore), raspored (desno gore)"
                      usemap="#wellnessMap"
-                     width="600" height="400">
+                     width="600" height="400"
+                     class="imagemap-slika">
                 <map name="wellnessMap">
                     <area shape="rect" coords="0,0,180,400"
                           href="#savjeti"
@@ -53,25 +55,25 @@
                           alt="Sedmični raspored aktivnosti"
                           title="Raspored">
                 </map>
-                <div>
-                    <span>Savjeti</span>
-                    <span>Galerija</span>
-                    <span>Raspored</span>
+                <div class="imagemap-overlay">
+                    <span class="mapa-label mapa-label-savjeti">Savjeti</span>
+                    <span class="mapa-label mapa-label-galerija">Galerija</span>
+                    <span class="mapa-label mapa-label-raspored">Raspored</span>
                 </div>
             </div>
         </section>
 
         <!-- SAVJETI: detaljan clanak s ugnijezdenom listom -->
-        <section id="savjeti">
+        <section id="savjeti" class="section-block">
             <h2>Savjeti za mentalno zdravlje studenata</h2>
-            <article>
+            <article class="article-block">
                 <h3>Cjeloviti vodič za student wellbeing</h3>
                 <p>Mentalno zdravlje studenata direktno utječe na akademski uspjeh, socijalne odnose i
                 cjelokupni kvalitet života. Ovaj vodič obuhvata sve ključne aspekte studentskog wellbeinga —
                 od upravljanja stresom do pravilne ishrane i fizičke aktivnosti.</p>
 
                 <h4>Sveobuhvatni plan wellbeinga</h4>
-                <ul>
+                <ul class="nested-list">
                     <li>Mentalno zdravlje i stres management
                         <ul>
                             <li>Tehnike upravljanja stresom
@@ -164,41 +166,41 @@
         </section>
 
         <!-- GALERIJA: 8 slika, picture element na prvoj -->
-        <section id="galerija">
+        <section id="galerija" class="section-block">
             <h2>Galerija — Wellbeing u slikama</h2>
-            <div>
-                <figure>
+            <div class="galerija-grid">
+                <figure class="galerija-item">
                     <picture>
                         <source srcset="images/meditacija.webp" type="image/webp">
                         <img src="images/meditacija.jpeg"
                              alt="Student sjedi prekriženih nogu i meditira u mirnom, sunčanom prostoru">
                     </picture>
                 </figure>
-                <figure>
+                <figure class="galerija-item">
                     <img src="images/hrana.jpeg"
                          alt="Raznovrsna zdrava hrana — svježe voće, povrće i proteini na drvenom stolu">
                 </figure>
-                <figure>
+                <figure class="galerija-item">
                     <img src="images/krevet.jpeg"
                          alt="Udobna spavaća soba s mekim osvjetljenjem — idealni uvjeti za kvalitetan san">
                 </figure>
-                <figure>
+                <figure class="galerija-item">
                     <img src="images/joga.jpeg"
                          alt="Osoba praktikuje jogu na otvorenom — poza ratnika s pogledom na horizont">
                 </figure>
-                <figure>
+                <figure class="galerija-item">
                     <img src="images/suma.jpeg"
                          alt="Sunčana šuma sa stazom za šetnju — terapeutski učinak prirode na mentalno zdravlje">
                 </figure>
-                <figure>
+                <figure class="galerija-item">
                     <img src="images/prijatelji.jpeg"
                          alt="Grupa studenata smije se i provodi ugodno vrijeme zajedno na otvorenom kampusu">
                 </figure>
-                <figure>
+                <figure class="galerija-item">
                     <img src="images/citanje.jpeg"
                          alt="Student fokusirano čita knjigu uz prozor s prirodnim dnevnim osvjetljenjem">
                 </figure>
-                <figure>
+                <figure class="galerija-item">
                     <img src="images/trcanje.jpeg"
                          alt="Žena trči po parku u jutarnjim satima — redovna fizička aktivnost za mentalno zdravlje">
                 </figure>
@@ -206,10 +208,10 @@
         </section>
 
         <!-- TABELA: 5 kolona, 7 redova podataka -->
-        <section id="raspored">
+        <section id="raspored" class="section-block">
             <h2>Preporučeni sedmični raspored wellbeing aktivnosti</h2>
-            <div>
-                <table>
+            <div class="table-wrapper">
+                <table class="raspored-tabela">
                     <caption>Sedmični wellness plan za studente — prilagodite prema vlastitom rasporedu</caption>
                     <thead>
                         <tr>
@@ -279,7 +281,7 @@
 
     <footer>
         <p>&copy; 2026 StudentMind | Grupa 41 | Autori: Kenan Ikinic, Kerim Fazlic, Kenan Lacic</p>
-        <a href="#vrh">Skoči na vrh</a>
+        <a href="#vrh" class="na-vrh-link">Skoči na vrh</a>
     </footer>
 </body>
 </html>
