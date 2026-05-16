@@ -1,4 +1,4 @@
-/* Promjenljive boje i teme; automatski tamni mod preko preferencija preglednika */
+/* ===== Promjenljive boje i teme; automatski tamni mod preko preferencija preglednika ===== */
 :root {
     --primarna: #2c3e50;
     --akcentna: #27ae60;
@@ -17,6 +17,46 @@
         --akcentna: #67d9a1;
         --gradijent: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
     }
+}
+
+/* ===== Tamni/Svjetli mod toggle ===== */
+
+body[data-theme="dark"] {
+    --pozadina: #121212;
+    --tekst: #e0e0e0;
+    --kartica: #1e1e1e;
+    --primarna: #81c784;
+    --akcentna: #67d9a1;
+    --gradijent: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
+
+body[data-theme="light"] {
+    --primarna: #2c3e50;
+    --akcentna: #27ae60;
+    --pozadina: #f4f7f6;
+    --tekst: #333;
+    --kartica: #fff;
+    --gradijent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tema-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.tema-toggle:hover {
+    background: var(--akcentna);
+    border-color: var(--akcentna);
+    color: white;
+    transform: scale(1.05);
 }
 
 /* ===== Zajednicki stilovi ===== */
@@ -90,7 +130,27 @@ footer {
     margin-top: 20px;
 }
 
+.nav-aktivna {
+    color: #ffd700 !important;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 3px;
+}
+
 /* ===== index.html ===== */
+
+#interaktivna-statistika {
+    border-left: 4px solid var(--akcentna);
+    padding: 8px 14px;
+    margin-bottom: 20px;
+    color: var(--akcentna);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+#interaktivna-statistika #brojac {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
 
 .page-grid {
     display: grid;
@@ -448,11 +508,25 @@ button[type="button"] {
 }
 
 .raspored-tabela tbody tr:nth-child(even) {
-    background: rgba(0,0,0,0.03);
+    background: rgba(0,0,0,0.08);
+}
+
+body[data-theme="dark"] .raspored-tabela tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+    .raspored-tabela tbody tr:nth-child(even) {
+        background: rgba(255,255,255,0.04);
+    }
+
+    body[data-theme="light"] .raspored-tabela tbody tr:nth-child(even) {
+        background: rgba(0,0,0,0.08);
+    }
 }
 
 .raspored-tabela tbody tr:hover {
-    background: rgba(39,174,96,0.08);
+    background: rgba(39,174,96,0.2) !important;
 }
 
 .tekst-centar { text-align: center; }
