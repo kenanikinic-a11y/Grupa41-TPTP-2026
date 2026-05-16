@@ -1,7 +1,8 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
+    initTema();
+    document.getElementById('temaToggle')?.addEventListener('click', toggleTema);
 
     const savedCategory = localStorage.getItem('preferredCategory') || 'sve';
     filtriraj(savedCategory);
@@ -115,4 +116,31 @@ function initSmoothScroll() {
         });
     });
 }
+
+function initTema() {
+    const saved = localStorage.getItem('tema');
+    if (saved) {
+        document.body.dataset.theme = saved;
+    }
+    updateToggleBtn();
+}
+
+function toggleTema() {
+    const current = document.body.dataset.theme;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = current === 'dark' || (current !== 'light' && prefersDark);
+    const next = isDark ? 'light' : 'dark';
+    document.body.dataset.theme = next;
+    localStorage.setItem('tema', next);
+    updateToggleBtn();
+}
+
+function updateToggleBtn() {
+    const btn = document.getElementById('temaToggle');
+    const current = document.body.dataset.theme;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = current === 'dark' || (current !== 'light' && prefersDark);
+    btn.textContent = isDark ? 'Svjetli mod' : 'Tamni mod';
+}
+
 
