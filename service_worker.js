@@ -47,3 +47,4 @@ self.addEventListener('fetch', event => {
             .then(cached => cached || fetch(event.request))
     );
 });
+// service_worker.js generisan uz pomoc AI-a

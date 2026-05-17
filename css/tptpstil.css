@@ -8,6 +8,7 @@
     --gradijent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+/* automatski tamni mod u skladu s preferencama sistema/browsera generisan uz pomoc AI-a */
 @media (prefers-color-scheme: dark) {
     :root {
         --pozadina: #121212;
@@ -137,6 +138,8 @@ footer {
 }
 
 /* ===== index.html ===== */
+
+/* SVG animacija rastuce biljke generisana uz pomoc AI-a */
 .svg-animation {
     max-width: 150px;
     margin: 0 auto 20px;
@@ -481,6 +484,8 @@ button[type="button"] {
     color: var(--akcentna);
 }
 
+
+/* keyframes animacija image mape-a dodana uz pomoc AI-a */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -566,6 +571,7 @@ button[type="button"] {
     background: rgba(0,0,0,0.08);
 }
 
+/* stil redova tabele zavisno od tamnog/svijetlog moda doradjen uz pomoc AI-a */
 body[data-theme="dark"] .raspored-tabela tbody tr:nth-child(even) {
     background: rgba(255,255,255,0.04);
 }
@@ -609,6 +615,7 @@ body[data-theme="dark"] .raspored-tabela tbody tr:nth-child(even) {
     pointer-events: none;
 }
 
+/* pozicija i stil labels na image map-u dodani uz pomoc AI-a */
 .mapa-label {
     position: absolute;
     background: rgba(0,0,0,0.55);
@@ -637,7 +644,7 @@ body[data-theme="dark"] .raspored-tabela tbody tr:nth-child(even) {
 .na-vrh-link:hover { color: #ffd700; }
 
 /* ===== Responzivnost ===== */
-
+/* responzivnost dodana uz pomoc AI-a */
 @media (max-width: 1100px) {
     .page-grid { grid-template-columns: 1fr; }
     .card-grid { grid-template-columns: 1fr 1fr; }

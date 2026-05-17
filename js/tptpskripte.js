@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedCategory = localStorage.getItem('preferredCategory') || 'sve';
     filtriraj(savedCategory);
 
+    // logika generisanja random broja dodana uz pomoc AI-a
     const brojac = document.getElementById('brojac');
     if (brojac) {
         setInterval(() => {
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 isValid = false;
             }
 
+            // regex za validaciju e-maila i telefona generisan uz pomoc AI-a
             const email = document.getElementById('email');
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (email && !emailRegex.test(email.value)) {
@@ -110,6 +112,7 @@ function filtriraj(kat) {
     localStorage.setItem('preferredCategory', kat);
 }
 
+// smooth scroll generisan uz pomoc AI-a
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', e => {
@@ -130,6 +133,7 @@ function initTema() {
     updateToggleBtn();
 }
 
+// logika izmjene teme i spremanja izbora u localStorage generisana uz pomoc AI
 function toggleTema() {
     const current = document.body.dataset.theme;
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
