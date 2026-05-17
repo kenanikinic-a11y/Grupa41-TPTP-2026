@@ -137,6 +137,61 @@ footer {
 }
 
 /* ===== index.html ===== */
+.svg-animation {
+    max-width: 150px;
+    margin: 0 auto 20px;
+}
+
+.svg-animation svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ground {
+    fill: #A0785A;
+    stroke: #6D4C41;
+    stroke-width: 2;
+}
+
+.stem {
+    fill: none;
+    stroke: #2E7D32;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: growStem 2s ease-out forwards;
+}
+
+.leaf {
+    stroke: #2E7D32;
+    stroke-width: 1;
+    transform: scale(0);
+    transform-box: fill-box;
+    animation: growLeaf 1s ease-out forwards;
+}
+
+.left-leaf {
+    fill: #81C784;
+    transform-origin: 100% 100%;
+    animation-delay: 2s;
+}
+
+.right-leaf {
+    fill: #4CAF50;
+    transform-origin: 0% 100%;
+    animation-delay: 2.5s;
+}
+
+@keyframes growStem {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes growLeaf {
+    to { transform: scale(1); }
+}
+
 
 #interaktivna-statistika {
     border-left: 4px solid var(--akcentna);
