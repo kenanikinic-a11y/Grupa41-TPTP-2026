@@ -1,0 +1,10 @@
+{
+    "name": "StudentMind",
+    "short_name": "StudentMind",
+    "description": "Zdravlje i wellbeing za studente",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#2c3e50",
+    "theme_color": "#2c3e50",
+    "lang": "bs"
+}

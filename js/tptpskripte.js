@@ -1,3 +1,8 @@
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service_worker.js');
+    });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
@@ -142,5 +147,3 @@ function updateToggleBtn() {
     const isDark = current === 'dark' || (current !== 'light' && prefersDark);
     btn.textContent = isDark ? 'Svjetli mod' : 'Tamni mod';
 }
-
-
